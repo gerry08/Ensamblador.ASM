@@ -46,12 +46,12 @@ goto muestreo_tiempo_de_conversion
 
 bsf STATUS,RP0
 bcf STATUS,RP1
-movf ADRESL,w ; cargo al acumulador los ultimos dos bits MSF de la }Conversion
+movf ADRESL,w ; cargo al acumulador los ultimos dos bits mSF(menos significativos) de la }Conversion
 movwf Analog
 movf  Analog,w  
 bcf STATUS,RP0
 bcf STATUS,RP1
-movwf PORTD ; escribe los dos bits MSF al puerto D
+movwf PORTD ; escribe los dos bits mSF(menos sgnificativos) al puerto D
 movf ADRESH,w; cargo al acumulador el registro que contiene la mayor parte de la conversion ADC
 movwf Analog
 movf  Analog,w
